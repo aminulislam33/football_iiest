@@ -30,8 +30,12 @@ export default function GalleryPage() {
               onClick={() => setSelectedImage(item)}
               className="group cursor-pointer relative overflow-hidden rounded-xl border-2 border-gold border-opacity-30 hover:border-opacity-100 transition-all"
             >
-              <div className="aspect-square bg-gradient-to-br from-field-dark to-field-green flex items-center justify-center text-8xl hover:text-9xl transition-all duration-300">
-                {item.image}
+              <div className="aspect-square bg-gradient-to-br from-field-dark to-field-green flex items-center justify-center overflow-hidden">
+                {item.image ? (
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="text-6xl">🏟️</div>
+                )}
               </div>
               
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end justify-start p-4">
@@ -67,7 +71,11 @@ export default function GalleryPage() {
               </button>
 
               <div className="bg-gradient-to-br from-field-dark to-field-green rounded-xl border-2 border-gold p-8">
-                <div className="text-9xl text-center mb-6">{selectedImage.image}</div>
+                {selectedImage.image ? (
+                  <img src={selectedImage.image} alt={selectedImage.title} className="w-full h-auto rounded-lg mb-6 object-cover max-h-96" />
+                ) : (
+                  <div className="text-9xl text-center mb-6">🏟️</div>
+                )}
                 <h2 className="text-3xl font-bold text-gold mb-2">{selectedImage.title}</h2>
                 <p className="text-gray-300 text-lg mb-6">{selectedImage.description}</p>
                 

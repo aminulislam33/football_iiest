@@ -19,7 +19,7 @@ export const tournaments = [
     startDate: '2024-03-20',
     endDate: '2024-04-20',
     teams: [7, 8, 9, 10],
-    status: 'ongoing'
+    status: 'upcoming'
   },
   {
     id: 3,
@@ -42,6 +42,17 @@ export const tournaments = [
     endDate: '2024-04-10',
     teams: [16, 17, 18, 19, 20],
     status: 'completed'
+  },
+  {
+    id: 5,
+    name: 'IIEST Football League',
+    description: 'The premier league competition for all football teams at IIEST',
+    shortName: 'IFL',
+    format: 'league',
+    startDate: '2026-04-11',
+    endDate: '2026-04-12',
+    teams: [1, 2, 3, 4, 5, 6, 7, 8],
+    status: 'upcoming'
   }
 ];
 
@@ -302,12 +313,52 @@ export const leagueStandings = {
 };
 
 export const galleryImages = [
-  { id: 1, title: 'Opening Ceremony', image: null, description: 'Inaugural event with team performances' },
-  { id: 2, title: 'IC Cup Final', image: null, description: 'Intense final match moments' },
-  { id: 3, title: 'Goal Celebration', image: null, description: 'Winning goal celebration' },
-  { id: 4, title: 'Team Lineup', image: null, description: 'Pre-match team formation' },
-  { id: 5, title: 'Victory Moment', image: null, description: 'Championship winning moment' },
-  { id: 6, title: 'Fan Support', image: null, description: 'Amazing crowd energy' },
-  { id: 7, title: 'Award Ceremony', image: null, description: 'Medal distribution event' },
-  { id: 8, title: 'Stadium View', image: null, description: 'Packed stadium atmosphere' }
+  {
+    id: 1,
+    title: 'IFL 5.0 Winners and Runners-up',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679440/IMG-20250409-WA0075_lmfort.jpg',
+    description: 'Schorchers FC and Thunder Strikers celebrating their victories in IFL 5.0'
+  },
+  {
+    id: 2,
+    title: 'Cooldown Session After Practice',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679434/IMG-20250327-WA0008_yvfw8z.jpg',
+    description: 'Moments of relaxation and camaraderie after an intense practice session at The Oval'
+  },
+  {
+    id: 3,
+    title: 'Warming Up Before the Practice Match',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679437/IMG-20250330-WA0016_cn4ldr.jpg',
+    description: 'Players warming up before the match, showcasing their dedication and focus'
+  },
+  {
+    id: 4,
+    title: 'BEC\'89 2025',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679435/IMG-20241110-WA0103_k0ldbg.jpg',
+    description: 'Moments from the BEC\'89 2025 tournament'
+  },
+  {
+    id: 5,
+    title: 'BEC\'89 Championship Celebration',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679426/IMG-20241110-WA0073_lz6sck.jpg',
+    description: 'Championship winning moment'
+  },
+  {
+    id: 6,
+    title: 'Inter College Invitational Cup team',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679410/IMG-20241110-WA0027_x7nsqv.jpg',
+    description: 'Team from outside college warming up before the match'
+  },
+  {
+    id: 7,
+    title: 'IIEST Football team warming up',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679392/IMG-20241110-WA0021_bwblut.jpg',
+    description: 'IIEST Football team warming up before the match'
+  },
+  {
+    id: 8,
+    title: 'Stadium View',
+    image: 'https://res.cloudinary.com/dwr8472qb/image/upload/v1774679388/IMG-20241109-WA0023_yptam9.jpg',
+    description: 'Beautiful view of the stadium during a match day'
+  }
 ];

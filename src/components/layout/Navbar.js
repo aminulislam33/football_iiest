@@ -9,7 +9,6 @@ import { ChevronDown } from 'lucide-react';
 
 const baseNavLinks = [
   { href: '/',            label: 'Home'        },
-  { href: '/teams',       label: 'Teams'       },
   { href: '/players',     label: 'Players'     },
   { href: '/gallery',     label: 'Gallery'     },
   { href: '/history',       label: 'History'       },

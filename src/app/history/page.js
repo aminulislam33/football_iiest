@@ -58,7 +58,7 @@ export default function HistoryPage() {
         {/* parallax bg */}
         <motion.div className="absolute inset-0 will-change-transform" style={{ y: bgY, scale: bgScale }}>
           <Image
-            src="/hero-bg.jpg"
+            src="https://res.cloudinary.com/dwr8472qb/image/upload/v1774287758/ChatGPT_Image_Mar_19_2026_04_44_27_PM_yrnfhi.png"
             alt="The Oval, IIEST Shibpur"
             fill
             priority
@@ -203,20 +203,39 @@ export default function HistoryPage() {
             fill
             quality={60}
             sizes="100vw"
-            className="object-cover object-[center_60%] saturate-50 blur-[2px]"
+            className="object-cover object-[center_60%] saturate-50"
           />
         </div>
         <div className="absolute inset-0 z-[1] bg-[#080b08]/88" />
 
-        <motion.div className="relative z-10 max-w-2xl mx-auto" {...fadeUp}>
+        <motion.div 
+          className="relative z-10 mx-auto"
+          style={{
+            backgroundImage: 'url(https://res.cloudinary.com/dwr8472qb/image/upload/v1774680666/Paper_PNG-removebg-preview_rwbrba.png)',
+            backgroundSize: '100%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            width: '540px',
+            maxWidth: '90vw',
+            aspectRatio: '1.2 / 1',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            paddingLeft: '80px',
+            paddingRight: '50px',
+            paddingTop: '60px',
+            paddingBottom: '60px'
+          }}
+          {...fadeUp}
+        >
           <div
             className="w-20 h-px mx-auto mb-10"
             style={{ background: 'linear-gradient(90deg, transparent, #c9a84c, transparent)' }}
           />
-          <h3 className="font-[family-name:var(--font-cormorant)] text-[clamp(34px,4.5vw,52px)] font-light italic text-black mb-6">
+          <h3 className="font-[family-name:var(--font-cormorant)] text-[clamp(28px,3.5vw,36px)] font-light italic text-black mb-4">
             A Living Legacy
           </h3>
-          <p className="text-[15px] font-light leading-[1.85] text-black mb-10">
+          <p className="text-[13px] font-light leading-[1.7] text-[#280905] mb-6">
             The Oval stands as a testament to over 150 years of sporting heritage —
             combining British colonial architecture with modern Indian achievement.
             From a hidden college playground to a venue worthy of national recognition,
@@ -226,13 +245,13 @@ export default function HistoryPage() {
             className="w-20 h-px mx-auto mb-10"
             style={{ background: 'linear-gradient(90deg, transparent, #c9a84c, transparent)' }}
           />
-          <p className="text-[11px] tracking-[2px] uppercase text-[#e8e3d8]/28">
+          <p className="text-[11px] tracking-[2px] uppercase text-[#4C5C2D]">
             Source:{' '}
             <a
               href="https://www.telegraphindia.com/west-bengal/the-oval-hidden-in-howrah/cid/1496209"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#c9a84c] hover:text-[#e8c97a] transition-colors"
+              className="text-[#DB1A1A] hover:text-[#e8c97a] transition-colors"
             >
               Telegraph India
             </a>

@@ -6,8 +6,40 @@ import MatchCard from '@/components/common/MatchCard';
 import PointsTable from '@/components/common/PointsTable';
 import KnockoutBracket from '@/components/common/KnockoutBracket';
 import FootballPitch from '@/components/common/FootballPitch';
+import PastTournamentCard from '@/components/common/PastTournamentCard';
 import { motion } from 'framer-motion';
 import { Trophy, Users, Target } from 'lucide-react';
+
+const lastSeason = {
+  title: 'IIEST Football League 2025',
+  edition: '12th',
+  shortName: "IFL 5.0",
+  description: 'The flagship football tournament of IIEST Shibpur, held annually on the historic Oval ground since 1982.',
+  startDate: '2025-01-10',
+  endDate: '2025-01-28',
+  format: 'knockout',
+  teams: [
+    { id: 1, name: 'Civil FC',      shortName: 'CIV', group: 'A' },
+    { id: 2, name: 'Mech United',   shortName: 'MCH', group: 'A' },
+    { id: 3, name: 'EE Dynamos',    shortName: 'EED', group: 'B' },
+    { id: 4, name: 'CSE Wanderers', shortName: 'CSW', group: 'B' },
+    { id: 5, name: 'Arch Rovers',   shortName: 'ARR', group: 'C' },
+    { id: 6, name: 'IT Strikers',   shortName: 'ITS', group: 'C' },
+    { id: 7, name: 'ECE Eagles',    shortName: 'ECE', group: 'D' },
+    { id: 8, name: 'Chem Blasters', shortName: 'CHB', group: 'D' },
+  ],
+  fixtures: [
+    { id: 1, round: 'Quarter Final', date: '2025-01-10', home: 1, away: 2, homeScore: 3, awayScore: 1, played: true },
+    { id: 2, round: 'Quarter Final', date: '2025-01-11', home: 3, away: 4, homeScore: 0, awayScore: 2, played: true },
+    { id: 3, round: 'Quarter Final', date: '2025-01-12', home: 5, away: 6, homeScore: 1, awayScore: 1, played: true, penaltyWinner: 5 },
+    { id: 4, round: 'Quarter Final', date: '2025-01-13', home: 7, away: 8, homeScore: 2, awayScore: 0, played: true },
+    { id: 5, round: 'Semi Final',    date: '2025-01-20', home: 1, away: 4, homeScore: 2, awayScore: 3, played: true },
+    { id: 6, round: 'Semi Final',    date: '2025-01-21', home: 5, away: 7, homeScore: 1, awayScore: 0, played: true },
+    { id: 7, round: 'Final',         date: '2025-01-28', home: 4, away: 5, homeScore: 2, awayScore: 1, played: true },
+  ],
+  winner: 4,
+  runnerUp: 5,
+};
 
 export default function TournamentDetailPage({ params }) {
   const { id } = use(params);
@@ -116,16 +148,14 @@ export default function TournamentDetailPage({ params }) {
               <p className="text-2xl md:text-3xl font-bold text-[#f0ebe0] capitalize">{tournament.format}</p>
               <p className="text-[11px] tracking-[2px] uppercase text-[#e8e3d8]/35 mt-2">Format</p>
             </div>
-            <div className={`rounded-lg p-6 border ${
-              tournament.status === 'ongoing' ? 'bg-emerald-500/20 border-emerald-500/40' :
-              tournament.status === 'upcoming' ? 'bg-blue-500/20 border-blue-500/40' :
-              'bg-[#c9a84c]/20 border-[#c9a84c]/40'
-            }`}>
-              <div className={`text-2xl md:text-3xl font-bold mb-2 capitalize ${
-                tournament.status === 'ongoing' ? 'text-emerald-400' :
-                tournament.status === 'upcoming' ? 'text-blue-400' :
-                'text-[#c9a84c]'
+            <div className={`rounded-lg p-6 border ${tournament.status === 'ongoing' ? 'bg-emerald-500/20 border-emerald-500/40' :
+                tournament.status === 'upcoming' ? 'bg-blue-500/20 border-blue-500/40' :
+                  'bg-[#c9a84c]/20 border-[#c9a84c]/40'
               }`}>
+              <div className={`text-2xl md:text-3xl font-bold mb-2 capitalize ${tournament.status === 'ongoing' ? 'text-emerald-400' :
+                  tournament.status === 'upcoming' ? 'text-blue-400' :
+                    'text-[#c9a84c]'
+                }`}>
                 {tournament.status}
               </div>
               <p className="text-[11px] tracking-[2px] uppercase text-[#e8e3d8]/35">Status</p>
@@ -152,7 +182,7 @@ export default function TournamentDetailPage({ params }) {
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light mb-12 text-[#f0ebe0] tracking-tight">
             Fixtures & Standings
           </h2>
-          
+
           {/* Knockout Bracket */}
           {tournament.format === 'knockout' && (
             <div className="mb-16">
@@ -253,7 +283,7 @@ export default function TournamentDetailPage({ params }) {
               >
                 {/* Hover glow effect */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(201,168,76,0.1)_0%,transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                
+
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -273,6 +303,13 @@ export default function TournamentDetailPage({ params }) {
           </div>
         </motion.section>
       </div>
+
+      {/* Past Tournament Section - Full Width */}
+      <section className="px-8 md:px-14 py-24 bg-gradient-to-b from-[#080b08] via-[#0c100c] to-[#080b08]">
+        <div className="max-w-6xl mx-auto">
+          <PastTournamentCard tournament={lastSeason} />
+        </div>
+      </section>
     </main>
   );
 }

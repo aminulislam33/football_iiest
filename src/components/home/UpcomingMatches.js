@@ -69,9 +69,7 @@ export default function UpcomingMatches({ matches, teams }) {
           >
             <Link
               href="/tournaments"
-              className="inline-flex items-center gap-3 px-8 py-3 border border-[#e8e3d8]/15
-                         text-[11px] tracking-[2.5px] uppercase font-medium text-[#e8e3d8]/50
-                         hover:border-[#c9a84c]/40 hover:text-[#c9a84c] transition-all duration-250"
+              className="inline-flex items-center gap-3 px-8 py-3 border border-[#e8e3d8]/15 text-[11px] tracking-[2.5px] uppercase font-medium text-[#e8e3d8]/50 hover:border-[#c9a84c]/40 hover:text-[#c9a84c] transition-all duration-250"
             >
               View All Matches
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none"
