@@ -20,7 +20,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#080b08]/92 border-b border-[#c9a84c]/18 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 bg-white border-b border-[#c9a84c]/18 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-7">
 
         {/* ── MAIN ROW ── */}
@@ -39,10 +39,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-[family-name:var(--font-bebas)] text-[20px] tracking-[2px] text-[#f0ebe0] group-hover:text-[#c9a84c] transition-colors duration-200">
+              <span className="font-[family-name:var(--font-bebas)] text-[20px] tracking-[2px] text-black group-hover:text-[#c9a84c] transition-colors duration-200">
                 IIEST Football
               </span>
-              <span className="text-[8px] tracking-[3.5px] uppercase text-[#c9a84c] mt-0.5">
+              <span className="text-[8px] tracking-[3.5px] uppercase text-black mt-0.5">
                 Shibpur · Est. 1856
               </span>
             </div>
@@ -60,8 +60,8 @@ export default function Navbar() {
                     after:absolute after:bottom-1 after:left-3.5 after:right-3.5 after:h-px after:bg-[#c9a84c]
                     after:transition-transform after:duration-250 after:origin-left
                     ${active
-                      ? 'text-[#f0ebe0] after:scale-x-100'
-                      : 'text-[#e8e3d8]/50 hover:text-[#f0ebe0] after:scale-x-0 hover:after:scale-x-100'
+                      ? 'text-black after:scale-x-100'
+                      : 'text-black hover:text-[#111FA2] after:scale-x-0 hover:after:scale-x-100'
                     }`}
                   suppressHydrationWarning
                 >
@@ -76,7 +76,7 @@ export default function Navbar() {
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
             >
-              <button className="relative px-3.5 py-2 text-[11px] tracking-[2px] uppercase font-medium transition-colors duration-200 text-[#e8e3d8]/50 hover:text-[#f0ebe0] flex items-center gap-1 group/btn">
+              <button className="relative px-3.5 py-2 text-[11px] tracking-[2px] uppercase font-medium transition-colors duration-200 text-black hover:text-[#111FA2] flex items-center gap-1 group/btn">
                 Tournaments
                 <ChevronDown size={14} className={`transition-transform duration-250 ${dropdownOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -96,7 +96,7 @@ export default function Navbar() {
                     <Link
                       key={tournament.id}
                       href={`/tournaments/${tournament.id}`}
-                      className="block px-4 py-2.5 text-[10px] tracking-[1.5px] text-[#e8e3d8]/70 hover:text-[#f0ebe0] hover:bg-[#c9a84c]/10 transition-colors border-b border-[#c9a84c]/10 last:border-b-0"
+                      className="block px-4 py-2.5 text-[10px] tracking-[1.5px] text-black hover:text-[#111FA2] hover:bg-[#c9a84c]/10 transition-colors border-b border-[#c9a84c]/10 last:border-b-0"
                       onClick={() => setDropdownOpen(false)}
                     >
                       <div className="font-medium text-[#f0ebe0]">{tournament.name}</div>
@@ -117,8 +117,8 @@ export default function Navbar() {
                     after:absolute after:bottom-1 after:left-3.5 after:right-3.5 after:h-px after:bg-[#c9a84c]
                     after:transition-transform after:duration-250 after:origin-left
                     ${active
-                      ? 'text-[#f0ebe0] after:scale-x-100'
-                      : 'text-[#e8e3d8]/50 hover:text-[#f0ebe0] after:scale-x-0 hover:after:scale-x-100'
+                      ? 'text-black after:scale-x-100'
+                      : 'text-black hover:text-[#111FA2] after:scale-x-0 hover:after:scale-x-100'
                     }`}
                   suppressHydrationWarning
                 >
