@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  output: 'standalone',
   reactCompiler: true,
   images: {
     remotePatterns: [
@@ -10,6 +10,12 @@ const nextConfig = {
         pathname: '/dwr8472qb/**',
       },
     ],
+    unoptimized: false,
+  },
+  // Suppress specific console warnings if needed
+  onDemandEntries: {
+    maxInactiveAge: 60 * 1000,
+    pagesBufferLength: 5,
   },
 };
 
